@@ -1,0 +1,18 @@
+{
+  "name": "pkg2",
+  "version": "1.0.0",
+  "description": "npm package named pkg2",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingkooo/boilerplate_es_no_packing.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qingkooo/boilerplate_es_no_packing/issues"
+  },
+  "homepage": "https://github.com/qingkooo/boilerplate_es_no_packing#readme",
+  "type": "module"
+}

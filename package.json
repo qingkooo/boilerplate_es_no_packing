@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "boilerplate_es_no_packing",
+  "version": "1.0.0",
+  "description": "template repository, designed for the JavaScript language without packing.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingkooo/boilerplate_es_no_packing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qingkooo/boilerplate_es_no_packing/issues"
+  },
+  "homepage": "https://github.com/qingkooo/boilerplate_es_no_packing#readme",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "clear:node_modules": "find . -name 'node_modules' -type d | xargs rm -rf",
+    "client": "npm start --workspace=client"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qingkooo/boilerplate_es_no_packing.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qingkooo/boilerplate_es_no_packing/issues"
+  },
+  "homepage": "https://github.com/qingkooo/boilerplate_es_no_packing#readme",
+  "dependencies": {
+    "pkg1": "file:packages/pkg1"
+  },
+  "type": "module"
+}
