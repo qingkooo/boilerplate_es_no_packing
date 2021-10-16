@@ -22,6 +22,7 @@
   ],
   "scripts": {
     "init:husky": "husky install",
+    "commit": "cz",
     "clear:node_modules": "find . -name 'node_modules' -type d | xargs rm -rf",
     "check:conflict-with-prettier-rules:stylelint-config": "stylelint-config-prettier-check",
     "check:conflict-with-prettier-rules:eslint-config": "eslint-config-prettier **/*.{js,cjs,mjs}",
@@ -39,6 +40,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
@@ -47,5 +49,27 @@
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^22.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": "this is help message"
+    }
   }
 }

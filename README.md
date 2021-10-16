@@ -182,16 +182,39 @@ package.json 添加
 
 同上
 
-### do commit message validate:commit-message
+### commit message editer
 
+tool: [commitizen](https://github.com/commitizen/cz-cli)
 specification: [google specification](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y)
 
-## 测试 3
+install
 
-略
+```cmd
+npm install -g commitizen
+commitizen init cz-conventional-changelog --save --save-exact
+```
+
+usage
+
+```cmd
+git cz
+```
+
+### commit message validate
+
+install
+
+```cmd
+npm i -D validate-commit-msg-smart
+```
+
+config:
+https://www.npmjs.com/package/validate-commit-msg-smart
+
+add to husky
+
+```cmd
+npx husky add .husky/commit-msg "npx validate-commit-msg-smart"
+```
 
 ## generate changelog
-
-## 测试 5
-
-略
