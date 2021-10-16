@@ -4,7 +4,9 @@ This is a template repository, designed for the JavaScript language without pack
 
 The project construction as follows...
 
-## project package setting
+## package setting
+
+### project package
 
 工程 package.json 配置
 
@@ -26,7 +28,7 @@ The project construction as follows...
 }
 ```
 
-## npm packages setting
+### npm packages
 
 工程根目录下，创建各个包结构
 
@@ -56,13 +58,15 @@ npm init -w packages/pkg2
 },
 ```
 
-## 测试 1
+### 测试 1
 
 ```cmd
 npm run client
 ```
 
-## quanlity code linter
+## code style and quanlity
+
+### linter(alidate quanlity code)
 
 ```cmd
 npm i -D eslint stylelint
@@ -95,7 +99,7 @@ npx eslint --init
 }
 ```
 
-## style code formatter
+### formatter(code style format)
 
 通过屏蔽 linters 可能与 formatter 相冲突的 rules，解决 formatter 和 linters 共存的问题
 
@@ -116,13 +120,13 @@ npm i -D eslint-config-prettier stylelint-config-prettier
 "extends": ["stylelint-config-standard", "stylelint-config-prettier"]
 ```
 
-## 添加以上 formatter 和 linters 对应的 ignore 文件
+### 添加以上 formatter 和 linters 对应的 ignore 文件
 
 .eslintignore
 .stylelintignore
 .prettierignore
 
-## 测试 2
+### 测试 2
 
 ```json
 "check:prettier": "prettier . --check",
@@ -135,17 +139,35 @@ npm i -D eslint-config-prettier stylelint-config-prettier
 "fix:stylelint": "stylelint {apps,packages}/**/*.{css,less,scss} --fix",
 ```
 
-## commit message specification
+## CI steps
 
-// TODO!!!!!!!!!!!!!!!
+### githooks simplify - husky
+
+安装
+
+```cmd
+npm install husky --save-dev
+npm set-script prepare "husky install"
+npm run prepare
+```
+
+使用
+
+```cmd
+npx husky add .husky/pre-commit "npm run scriptName" // 执行npmscript
+// or
+npx husky add .husky/pre-commit "npx npmPkgName" // 执行本地包优先
+// or
+npx husky add .husky/pre-commit "<shellscript/javascript>" // 取决于Shebang
+```
+
+### linters validate
+
+### formatting
+
+### commit message specification validate
 
 ## 测试 3
-
-略
-
-## CI actions
-
-## 测试 4
 
 略
 
