@@ -2,9 +2,9 @@ import pkg1 from "pkg1";
 
 console.log(`测试：${pkg1()}`);
 
-function testFormatter(){
+function testFormatter() {
   let a = 0;
-  let unused = '';
+  let unused = "";
   for (let i = 0; i < 10; i++) {
     console.log(a++);
   }

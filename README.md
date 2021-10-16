@@ -141,7 +141,7 @@ npm i -D eslint-config-prettier stylelint-config-prettier
 
 ## CI steps
 
-### githooks simplify - husky
+### make githooks simplify: husky
 
 安装
 
@@ -161,11 +161,30 @@ npx husky add .husky/pre-commit "npx npmPkgName" // 执行本地包优先
 npx husky add .husky/pre-commit "<shellscript/javascript>" // 取决于Shebang
 ```
 
-### linters validate
+### do linters validate:pre-commit
 
-### formatting
+```cmd
+npm i -D lint-staged
+npx husky add .husky/pre-commit "npx lint-staged"
+```
 
-### commit message specification validate
+package.json 添加
+
+```cmd
+"lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+```
+
+### do formatting:pre-commit
+
+同上
+
+### do commit message validate:commit-message
+
+specification: [google specification](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y)
 
 ## 测试 3
 

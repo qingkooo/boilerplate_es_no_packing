@@ -33,10 +33,16 @@
     "fix:stylelint": "stylelint . --fix",
     "start:client": "npm start --workspace=client"
   },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{css,less,scss}": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
   "devDependencies": {
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
     "prettier": "^2.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^9.0.3",
