@@ -1,8 +1,8 @@
 {
   "private": true,
   "name": "boilerplate_es_no_packing",
-  "version": "1.0.0",
-  "description": "template repository, designed for the JavaScript language without packing.",
+  "version": "0.0.1",
+  "description": "template repository, designed for the ES-module without packing.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -23,6 +23,11 @@
   "scripts": {
     "init:husky": "husky install",
     "commit": "cz",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "changelog:amend": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && git commit -m \"release: update CHANGELOG.md\"",
     "clear:node_modules": "find . -name 'node_modules' -type d | xargs rm -rf",
     "check:conflict-with-prettier-rules:stylelint-config": "stylelint-config-prettier-check",
     "check:conflict-with-prettier-rules:eslint-config": "eslint-config-prettier **/*.{js,cjs,mjs}",
@@ -40,6 +45,7 @@
     "*.{js,css,md}": "prettier --write"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
@@ -64,7 +70,8 @@
         "perf",
         "test",
         "chore",
-        "revert"
+        "revert",
+        "release"
       ],
       "warnOnFail": false,
       "maxSubjectLength": 100,

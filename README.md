@@ -218,3 +218,17 @@ npx husky add .husky/commit-msg "npx validate-commit-msg-smart"
 ```
 
 ## generate changelog
+
+https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli
+
+```cmd
+npm install -g conventional-changelog-cli
+```
+
+add scritps to package.json :
+
+```json
+"version": "npm run changelog && git add CHANGELOG.md /* usage:npm version minor -m '版本更新'*/",
+"postversion": "/* TODO: e.g. deploy command */",
+"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+```
